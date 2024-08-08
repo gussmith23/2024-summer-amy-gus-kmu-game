@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhg2rf5ypcjl6"]
+
+[ext_resource type="Texture2D" uid="uid://b22rmdkditt1x" path="res://assets/triangle.drawio.png" id="1_k8nt1"]
+
+[node name="CardSlot" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_k8nt1")

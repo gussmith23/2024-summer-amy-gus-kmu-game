@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dglaqc6t30g6u"]
+
+[ext_resource type="PackedScene" uid="uid://bhg2rf5ypcjl6" path="res://card_slot.tscn" id="1_etu8o"]
+[ext_resource type="PackedScene" uid="uid://bytand4o2v3ht" path="res://card.tscn" id="2_duwli"]
+[ext_resource type="Script" path="res://card.gd" id="3_iqm4h"]
+
+[node name="Board" type="Node2D"]
+
+[node name="CardSlot6" parent="." instance=ExtResource("1_etu8o")]
+position = Vector2(35, 51)
+rotation = 1.04054
+
+[node name="CardSlot4" parent="." instance=ExtResource("1_etu8o")]
+position = Vector2(63, 2)
+rotation = 3.10083
+
+[node name="CardSlot3" parent="." instance=ExtResource("1_etu8o")]
+position = Vector2(93, 14)
+rotation = -2.15783
+
+[node name="CardSlot" parent="." instance=ExtResource("1_etu8o")]
+position = Vector2(65, 66)
+
+[node name="CardSlot2" parent="." instance=ExtResource("1_etu8o")]
+position = Vector2(95, 49)
+rotation = -1.07892
+
+[node name="CardSlot5" parent="." instance=ExtResource("1_etu8o")]
+position = Vector2(36, 19)
+rotation = 2.08954
+
+[node name="CardSlot7" parent="." instance=ExtResource("2_duwli")]
+position = Vector2(205, 97)
+script = ExtResource("3_iqm4h")
