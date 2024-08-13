@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dglaqc6t30g6u"]
 
+[ext_resource type="Script" path="res://board.gd" id="1_2nmhh"]
 [ext_resource type="PackedScene" uid="uid://bhg2rf5ypcjl6" path="res://card_slot.tscn" id="1_etu8o"]
 [ext_resource type="PackedScene" uid="uid://bytand4o2v3ht" path="res://card.tscn" id="2_duwli"]
-[ext_resource type="Script" path="res://card.gd" id="3_iqm4h"]
 
 [node name="Board" type="Node2D"]
+script = ExtResource("1_2nmhh")
 
 [node name="CardSlot6" parent="." instance=ExtResource("1_etu8o")]
 position = Vector2(35, 51)
@@ -29,6 +30,20 @@ rotation = -1.07892
 position = Vector2(36, 19)
 rotation = 2.08954
 
-[node name="CardSlot7" parent="." instance=ExtResource("2_duwli")]
-position = Vector2(205, 97)
-script = ExtResource("3_iqm4h")
+[node name="Card" parent="." instance=ExtResource("2_duwli")]
+position = Vector2(222, 56)
+
+[connection signal="mouse_entered" from="CardSlot6" to="." method="_on_card_slot_mouse_entered"]
+[connection signal="mouse_exited" from="CardSlot6" to="." method="_on_card_slot_mouse_exited"]
+[connection signal="mouse_entered" from="CardSlot4" to="." method="_on_card_slot_mouse_entered"]
+[connection signal="mouse_exited" from="CardSlot4" to="." method="_on_card_slot_mouse_exited"]
+[connection signal="mouse_entered" from="CardSlot3" to="." method="_on_card_slot_mouse_entered"]
+[connection signal="mouse_exited" from="CardSlot3" to="." method="_on_card_slot_mouse_exited"]
+[connection signal="mouse_entered" from="CardSlot" to="." method="_on_card_slot_mouse_entered"]
+[connection signal="mouse_exited" from="CardSlot" to="." method="_on_card_slot_mouse_exited"]
+[connection signal="mouse_entered" from="CardSlot2" to="." method="_on_card_slot_mouse_entered"]
+[connection signal="mouse_exited" from="CardSlot2" to="." method="_on_card_slot_mouse_exited"]
+[connection signal="mouse_entered" from="CardSlot5" to="." method="_on_card_slot_mouse_entered"]
+[connection signal="mouse_exited" from="CardSlot5" to="." method="_on_card_slot_mouse_exited"]
+[connection signal="card_picked_up" from="Card" to="." method="_on_card_picked_up"]
+[connection signal="card_released" from="Card" to="." method="_on_card_released"]

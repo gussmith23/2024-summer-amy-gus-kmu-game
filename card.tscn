@@ -1,12 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://bytand4o2v3ht"]
+[gd_scene load_steps=4 format=3 uid="uid://bytand4o2v3ht"]
 
 [ext_resource type="Script" path="res://card.gd" id="1_7g6cr"]
 [ext_resource type="Texture2D" uid="uid://c7cvw2fcba2m5" path="res://assets/card.drawio.png" id="1_gdwrr"]
-[ext_resource type="Script" path="res://Area2D.gd" id="2_nmfgm"]
-[ext_resource type="Script" path="res://CollisionShape2D.gd" id="3_ys0td"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7as75"]
-size = Vector2(70, 61)
+[sub_resource type="GDScript" id="GDScript_h3y2k"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_input_event(viewport, event, shape_idx):
+	print(event)
+
+"
 
 [node name="Card" type="Node2D"]
 script = ExtResource("1_7g6cr")
@@ -15,9 +29,11 @@ script = ExtResource("1_7g6cr")
 texture = ExtResource("1_gdwrr")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_nmfgm")
+script = SubResource("GDScript_h3y2k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_7as75")
-script = ExtResource("3_ys0td")
+polygon = PackedVector2Array(0, -30.5, 36, 29.5, -36, 29.5)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
