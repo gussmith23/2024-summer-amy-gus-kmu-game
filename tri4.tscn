@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv8ys0yo41lo0"]
+
+[ext_resource type="PackedScene" uid="uid://bhg2rf5ypcjl6" path="res://card_slot.tscn" id="1_ugmwn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CardSlot" parent="." instance=ExtResource("1_ugmwn")]
+position = Vector2(102, 41)
+
+[node name="CardSlot2" parent="." instance=ExtResource("1_ugmwn")]
+position = Vector2(60, 109)
+
+[node name="CardSlot3" parent="." instance=ExtResource("1_ugmwn")]
+position = Vector2(103, 106)
+rotation = -3.14159
+
+[node name="CardSlot4" parent="." instance=ExtResource("1_ugmwn")]
+position = Vector2(145, 110)

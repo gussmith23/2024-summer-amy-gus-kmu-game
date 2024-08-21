@@ -12,11 +12,11 @@ position = Vector2(35, 51)
 rotation = 1.04054
 
 [node name="CardSlot4" parent="." instance=ExtResource("1_etu8o")]
-position = Vector2(63, 2)
+position = Vector2(62, 1)
 rotation = 3.10083
 
 [node name="CardSlot3" parent="." instance=ExtResource("1_etu8o")]
-position = Vector2(93, 14)
+position = Vector2(92, 17)
 rotation = -2.15783
 
 [node name="CardSlot" parent="." instance=ExtResource("1_etu8o")]
